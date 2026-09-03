@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps — Rooted Tales | Xenwinx Studio</title>
+<link rel="stylesheet" href="xenwinx.css">
+<style>
+.app-hero{ display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; max-width:var(--maxw); margin:0 auto; padding:4vh 24px 2vh; }
+.app-hero .tag{ border:none; padding:0; color:var(--teal-bright); font-size:.8rem; }
+.app-hero h1{ font-size:clamp(2.4rem,6vw,4.2rem); letter-spacing:.14em; margin:8px 0; }
+.app-hero .grow{ font-style:italic; font-size:1.5rem; color:var(--teal); }
+.app-hero p{ color:var(--ink-soft); margin-top:14px; }
+.phone-shot{ justify-self:center; width:clamp(220px,30vw,300px); filter:drop-shadow(0 30px 60px rgba(16,62,66,.5)); animation:floatY 7s ease-in-out infinite; }
+.phone-shot img{ width:100%; height:auto; display:block; border-radius:30px; }
+@keyframes floatY{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-14px);} }
+@media (max-width:760px){ .app-hero{ grid-template-columns:1fr; text-align:center; } }
+
+.feat{ padding:28px; }
+.feat .fi{ width:44px; height:44px; display:grid; place-items:center; border:1px solid var(--teal); border-radius:12px; color:var(--teal); margin-bottom:14px; }
+.feat h3{ font-size:1.15rem; letter-spacing:.08em; }
+.feat p{ color:var(--ink-soft); font-size:1rem; }
+
+.gchar{ aspect-ratio:3/4; padding:0; overflow:hidden; position:relative; }
+.gchar .portrait{ position:absolute; inset:0; }
+.gchar .portrait-img{ position:absolute; bottom:0; left:50%; transform:translateX(-50%); height:78%; width:auto; object-fit:contain; z-index:2; filter:drop-shadow(0 8px 24px rgba(0,0,0,.45)); }
+.gchar .glass{ position:absolute; inset:0; background:linear-gradient(150deg, rgba(191,224,230,.22), rgba(28,95,99,.12)); backdrop-filter:blur(2px); border-radius:10px; }
+.gchar .label{ position:absolute; left:0; right:0; bottom:0; padding:18px; z-index:3; text-align:center; }
+.gchar .label .sp{ font-family:var(--font-display); letter-spacing:.2em; font-size:.6rem; text-transform:uppercase; color:var(--ice); }
+.gchar .label h4{ color:#fff; font-family:var(--font-display); letter-spacing:.08em; font-size:1.25rem; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+.gchar{ animation:floatCard 8s ease-in-out infinite; }
+.gchar:nth-child(even){ animation-delay:1.2s; }
+@keyframes floatCard{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
+</style>
+</head>
+<body class="page-glass">
+<nav class="xw-nav">
+  <a class="xw-brand" href="index.html"><img src="emblem.png" alt="Xenwinx"><span class="bt" data-type="XENWINX STUDIO">XENWINX STUDIO</span></a>
+  <button class="xw-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="xw-links">
+    <a href="index.html">Home</a><a href="games.html">Worlds</a><a href="store.html">Portfolio</a><a href="apps.html">Services</a><a href="about.html">Studio</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+<div class="paper-grain"></div>
+<div class="world-bg soft" data-seed="8"></div>
+
+<main class="page-main">
+  <section class="app-hero reveal in">
+    <div>
+      <div class="tag">The Apps · Rooted Tales</div>
+      <h1 class="display">Rooted Tales</h1>
+      <div class="grow">Where Stories Grow.</div>
+      <p>An immersive children's reading world built around Akai the Red Panda and friends — read-along stories, gentle learning games, and a living library that grows with every adventure.</p>
+      <div style="margin-top:22px; display:flex; gap:14px; flex-wrap:wrap">
+        <a class="btn" href="store.html" data-bloom>Browse the Tales</a>
+        <a class="btn btn--ghost" href="#features">See Features</a>
+      </div>
+    </div>
+    <div class="phone-shot">
+      <img src="rooted-tales-screen.png" alt="Rooted Tales app — Begin Journey screen">
+    </div>
+  </section>
+
+  <header class="page-hero reveal" id="features" style="padding-top:6vh">
+    <div class="eyebrow">What's Inside</div>
+    <h2 class="display" style="font-size:clamp(1.6rem,4vw,2.6rem)">Built for Curious Minds</h2>
+  </header>
+  <section class="card-grid cols-3" id="feats"></section>
+
+  <header class="page-hero reveal" style="padding-top:4vh">
+    <div class="eyebrow">The Cast</div>
+    <h2 class="display" style="font-size:clamp(1.6rem,4vw,2.6rem)">Character Gallery</h2>
+    <p class="sub">Twelve companions, each carved in glass and moonlight.</p>
+  </header>
+  <section class="card-grid cols-4" id="chars"></section>
+</main>
+
+<div class="foot-sil"><img src="footer-silhouette.png" alt=""></div>
+<footer class="xw-foot">
+  <div class="wordmark" style="font-size:1.1rem; color:var(--ice)">XENWINX&nbsp;STUDIO</div>
+  <p style="margin:10px 0 4px">Imagine. Design. Inspiring Minds.</p>
+</footer>
+
+<script src="scenery.js"></script>
+<script src="world.js"></script>
+<script>
+const feats=[
+ ['Immersive Reading','Read along yourself or let gentle text-to-speech narrate every page.','M4 6h16M4 12h16M4 18h10'],
+ ['Explore & Learn','A character gallery and real red panda facts woven into every story.','M12 3l9 4-9 4-9-4 9-4zM3 12l9 4 9-4'],
+ ['Play & Earn','Educational mini-games and collectible badges reward curious readers.','M12 2l2.4 6.9H22l-6 4.3 2.3 6.8L12 16l-6.3 4 2.3-6.8-6-4.3h7.6z'],
+ ['Fresh Adventures','New tales and content arrive regularly, so the world keeps growing.','M21 12a9 9 0 1 1-3-6.7M21 4v5h-5'],
+ ['Personal Library','Track reading, bookmark favourites and collect every tale.','M4 5h12v16H4zM16 5l4 1v15l-4-1'],
+ ['Custom Themes','Choose Forest, Water or Night and let the world shift around you.','M12 3a9 9 0 1 0 9 9c-5 0-9-4-9-9z'],
+];
+document.getElementById('feats').innerHTML = feats.map(f=>`
+ <article class="xw-card feat reveal">
+   <span class="corner tl"></span><span class="corner br"></span>
+   <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="${f[2]}"/></svg></div>
+   <h3 class="display">${f[0]}</h3>
+   <p>${f[1]}</p>
+ </article>`).join('');
+
+const chars=[
+ ['Akai','Red Panda','#9c5a3c','char-red-panda.png'],
+ ['Daichi','Panda','#3c4a44','char-panda.png'],
+ ['Raiku','Raccoon','#46505c','char-raccoon.png'],
+ ['Quinn','Quokka','#b5823c','char-quokka.png'],
+ ['Koa','Koala','#5a6b6e','char-koala.png'],
+ ['Hedge','Hedgehog','#8a6a48','char-hedgehog.png'],['Maru','Monkey','#7a5a3a','char-monkey.png'],['Ellie','Elephant','#6a6f78','char-elephant.png'],
+ ['Orin','Owl','#4a4258','char-owl.png'],['Raine','Reindeer','#5c4a3c','char-reindeer.png'],['Kaito','Sea Turtle','#2c6a64','char-sea-turtle.png'],['Mizuto','Sea Otter','#3a6b6e','char-sea-otter.png'],
+];
+document.getElementById('chars').innerHTML = chars.map(c=>{
+  const portraitStyle = c[3]
+    ? `background:url('${c[3]}') center/cover no-repeat`
+    : `background:radial-gradient(120% 90% at 50% 25%, ${c[2]}, #0c2326)`;
+  const portraitImg = '';
+  return `
+ <article class="glass-card gchar reveal">
+   <div class="portrait" style="${portraitStyle}"></div>
+   <div class="glass"></div>
+   <div class="label"><div class="sp">${c[1]}</div><h4>${c[0]}</h4></div>
+ </article>`;
+}).join('');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="cursor.js"></script>
+</body>
+</html>
